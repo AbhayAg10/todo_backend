@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./todo.css">
+  
+</head>
+
+<body>
+    
+    <div id="a"><h1>TODO</h1></div>
+    
+    <div id="b"></div>
+
+</body>
+
+</html>
+<script type="module">
+     import data from "../src/db.json" assert { type: "json" }
+    
+    console.log(data.todo)
+    data.todo.forEach(function(elem){
+        let container=document.getElementById("b")
+       
+        let div=document.createElement('div')
+        div.setAttribute("class","todo")
+
+        let a=document.createElement("h2")
+        a.innerText=elem.id+" . "
+        let b=document.createElement("h3")
+        b.innerText=elem.title
+        let c=document.createElement("h3")
+        c.innerText=elem.completed?"DONE":"NOT DONE"
+        div.append(a,b,c)
+        container.append(div)
+    })
+</script>

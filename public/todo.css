@@ -1,0 +1,11 @@
+.todo{
+    display: flex;
+    text-align: left;
+    width: 50%;
+    margin: auto;
+    gap:50px
+}
+#a{
+    text-align: center;
+
+}
